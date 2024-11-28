@@ -1,0 +1,15 @@
+input[type=text], .color ,input[type=number]{
+    outline: none;
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  span {
+    color:red;
+    margin-left: 100px;
+    padding: 2px;
+  }

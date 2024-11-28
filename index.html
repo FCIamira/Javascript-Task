@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day5</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+<style>
+     #nav-task{
+        list-style-type: none;
+        padding: 40px;
+        font-size: 30px;
+        text-decoration: none;
+        color: black;
+    }
+    a {
+text-decoration: none;
+color: black;
+}
+</style>
+</head>
+<body>
+
+    <nav>
+        <ul style="display: flex;">
+            <li id="nav-task"><a href="#task1">Task 1</a></li>
+            <li id="nav-task"><a href="#task2">Task 2</a></li>
+            <li id="nav-task"><a href="#task3">Task 3</a></li>
+            <li id="nav-task"><a href="#task4">Task 4</a></li>
+
+
+        </ul>
+    </nav>
+    <div id="task1" style="height: 100vh;">
+    <form>
+        <input type="text" id="inputName" placeholder="Enter your Name" class="tow">
+        <span id="spanName"></span>
+        <br><br>
+        <input type="number" id="inputAge" placeholder="Enter your age" class="tow">
+        <span id="spanAge"></span>
+        <br><br>
+        <div style="display: flex;">
+            <div style="display: grid;">
+                <img src="./img/1.jpg" alt="female" id="fimg">
+                <div>
+                    <input type="radio" name="Gender" value="female" id="femaleRadio">
+                    <label for="femaleRadio">female</label>
+                </div>
+            </div>
+            <div style="display: grid;">
+                <img src="./img/2.jpg" alt="male" id="mimg">
+                <div>
+                    <input type="radio" name="Gender" value="male" id="maleRadio">
+                    <label for="maleRadio">male</label>
+                </div>
+            </div>
+        </div>
+            
+       
+        <span id="spanGender"></span>
+        <br>
+        <label for="color">Select color:</label>
+        <input list="Dcolor" name="color" id="color" class="inputValid">
+        <datalist id="Dcolor">
+            <option value="Red">
+            <option value="Green">
+            <option value="Blue">
+            <option value="Black">
+        </datalist>
+        <br><br>
+        <button type="submit" onclick="submitbut(event)">Submit</button>
+    </form>
+</div>
+    <div id="task2" style="height: 100vh;">
+        <h2>2. Ajax</h2>
+        <button id="getUsers">Get All Users</button>
+        <table id="userTable">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Emails</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be inserted dynamically -->
+            </tbody>
+        </table>
+        <div class="details" id="userDetails">
+            <h3>User Details</h3>
+            <p>Name: <span id="name"></span></p>
+            <p>Email: <span id="email"></span></p>
+            <p>Website: <span id="website"></span></p>
+            <p>Address: <span id="address"></span></p>
+    </div>
+</div>
+
+    <div id="task3" style="height: 100vh;">
+        <h1>task3</h1>
+        <code>
+            <pre>
+            function twoParametersOnly(param1, param2) {
+                if (arguments.length !== 2) {
+                    throw new Error("The function accepts only 2 parameters.");
+                }
+                console.log("Parameters are:", param1, param2);
+            }
+            
+            try {
+                twoParametersOnly(1, 2);
+                twoParametersOnly(1);    
+                twoParametersOnly(1, 2, 3); 
+            } catch (error) {
+                console.error(error.message);
+            }
+        </code>
+    </pre>
+
+    </div>
+    <div id="task4" style="height: 100vh;">
+        <pre>
+            <code>
+                <h1>task4</h1>
+                function addNumbersOnly() {
+                    if (arguments.length === 0) {
+                        throw new Error("No parameters passed. Please provide numbers to add.");
+                    }
+                    for (var i = 0; i < arguments.length; i++) {
+                        if (typeof arguments[i] !== "number") {
+                            throw new Error("All parameters must be numbers.");
+                        }
+                    }
+                    var sum = 0;
+                    for (var i = 0; i < arguments.length; i++) {
+                        sum += arguments[i];
+                    }
+                    return sum;
+                }
+                try {
+                    console.log(addNumbersOnly(1, 2, 3)); 
+                    console.log(addNumbersOnly()); 
+                    console.log(addNumbersOnly(1, "a", 3)); 
+                } catch (error) {
+                    console.error(error.message);
+                }
+            </code>
+        </pre>
+    </div>
+    <script src="./cookies.js"></script>
+    <script src="./ajax.js"></script>
+</body>
+</html>
